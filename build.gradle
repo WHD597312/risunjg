@@ -1,0 +1,79 @@
+apply plugin: 'com.android.application'
+apply plugin: 'org.greenrobot.greendao'
+
+repositories {
+    maven {
+        url "https://jitpack.io"
+    }
+}
+android {
+    compileSdkVersion 26
+    defaultConfig {
+        applicationId "com.risun.jg"
+        minSdkVersion 15
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        ndk {
+            //选择要添加的对应cpu类型的.so库。
+            abiFilters 'armeabi', 'armeabi-v7a', 'arm64-v8a', 'x86', 'x86_64', 'mips', 'mips64'
+        }
+
+        manifestPlaceholders = [
+                JPUSH_PKGNAME: applicationId,
+                JPUSH_APPKEY : "1cdb92d34196bcfba18948e9",
+                JPUSH_CHANNEL: "developer-default",
+        ]
+
+    }
+    sourceSets {
+        main {
+            jniLibs.srcDir 'libs'
+            //说明so的路径为该libs路径，关联所有地图SDK的so文件
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.android.support:appcompat-v7:26.1.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    implementation 'com.android.support:design:26.1.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.1'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+
+    compile 'org.greenrobot:greendao:3.0.1'
+
+    compile 'cn.jiguang.sdk:jpush:3.0.9'
+    compile 'cn.jiguang.sdk:jcore:1.1.7'
+    compile 'com.squareup.okhttp3:okhttp:3.2.0'
+    compile 'com.squareup.okio:okio:1.7.0'
+    compile 'com.j256.ormlite:ormlite-core:4.48'
+    compile 'com.j256.ormlite:ormlite-android:4.48'
+    compile files('libs/baidumapapi_v3_5_0.jar')
+    compile files('libs/locSDK_5.2.jar')
+
+
+    compile 'org.greenrobot:eventbus:3.0.0'
+    compile 'com.facebook.fresco:fresco:0.14.1'
+    compile 'com.facebook.fresco:animated-base-support:0.14.1'
+    compile 'com.facebook.fresco:animated-gif:0.14.1'
+    compile 'com.facebook.fresco:webpsupport:0.14.1'
+    compile 'com.facebook.fresco:animated-webp:0.14.1'
+    compile 'com.facebook.fresco:imagepipeline-okhttp3:0.14.1'
+    compile 'com.zhy:okhttputils:2.0.0'
+    compile 'com.jakewharton:butterknife:8.5.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.5.1'
+    compile 'com.alibaba:fastjson:1.2.10'
+    compile 'com.yalantis:sidemenu:1.0'
+    compile 'com.github.ozodrukh:CircularReveal:1.0.4'
+}

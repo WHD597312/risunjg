@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.risun.jg.activity.TestActivity2">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+        <com.risun.jg.custom_view.ToggleView
+            android:id="@+id/toggleView"
+            android:layout_width="@dimen/dp_100"
+            android:layout_height="@dimen/dp_40"
+            android:layout_gravity="center"
+            android:background="@drawable/toggle_bg"
+            app:toggle_text="个人"
+            app:toggle_txt_size="@dimen/sp_18"
+            app:toggle_txt_state="false"
+            />
+        <com.risun.jg.custom_view.XCRoundProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="@dimen/dp_80"
+            android:layout_height="@dimen/dp_80"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/dp_10"
+            app:max="100"
+            app:roundColor="#a9ea8b"
+            app:innerRoundColor="#e3fbdc"
+            app:roundProgressColor="#57d727"
+            app:textColor="#4a71af"
+            app:textSize="@dimen/sp_16"
+            />
+    </LinearLayout>
+</android.support.constraint.ConstraintLayout>

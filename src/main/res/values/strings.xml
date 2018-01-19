@@ -1,0 +1,37 @@
+<resources>
+
+    <string name="tag_hint">Tag为大小写字母，数字，下划线,中文， 多个用以逗号分隔</string>
+    <string name="alias_hint">Alias为大小写字母，数字，下划线</string>
+    <string name="style_hint">style为数字</string>
+    <string name="error_style_empty">style不能为空</string>
+    <string name="error_alias_empty">alias不能为空</string>
+    <string name="error_tag_empty">tag不能为空</string>
+    <string name="error_tag_gs_empty">格式不对</string>
+    <string name="error_network">网络连接异常,初始化失败 请检查网络！</string>
+    <string name="logining">程序在后台执行, 请查看日志！</string>
+    <string name="setting_su">设置成功</string>
+
+
+    <string name="app_name">risun-jg</string>
+    <string name="login_etname">账户</string>
+    <string name="login_etpswd">密码</string>
+    <string name="login_remeber_pswd">记住密码</string>
+    <string name="register">注册</string>
+    <string name="login">登录</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="refister_etname">请输入你的账号</string>
+    <string name="register_etpswd">请输入你的密码</string>
+    <string name="register_reetpswd">请输入你的电话号码</string>
+    <string name="text_message">消息</string>
+    <string name="text_contact">联系人</string>
+    <string name="text_me">我</string>
+    <string name="personal">个人信息</string>
+    <string name="message">消息</string>
+    <string name="add">添加</string>
+    <string name="name">姓名</string>
+    <string name="phone">电话</string>
+    <string name="send">发送</string>
+    <string name="action_settings">Settings</string>
+    <string name="drawer_open">Open</string>
+    <string name="drawer_close">Close</string>
+</resources>

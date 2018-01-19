@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.risun.jg.activity.AddActivity">
+
+    <RelativeLayout
+        android:layout_marginTop="@dimen/dp_5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+        <LinearLayout
+            android:id="@+id/head"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/gray_background"
+                />
+        </LinearLayout>
+        <RelativeLayout
+            android:id="@+id/body"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/head"
+            >
+            <EditText
+                android:id="@+id/edit_search"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/image_search"
+                android:layout_alignParentTop="true"
+                android:layout_toLeftOf="@+id/image_search"
+                android:layout_toRightOf="@+id/image_return"
+                android:background="@null"
+                android:textSize="@dimen/sp_18"
+                android:gravity="center"
+                android:hint="请输入用户账号" >
+                <requestFocus android:layout_height="wrap_content" />
+            </EditText>
+            <View
+                android:id="@+id/view"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_2"
+                android:layout_below="@id/edit_search"
+                android:layout_alignLeft="@id/image_return"
+                android:layout_alignRight="@id/image_search"
+                android:background="@color/login_view"/>
+            <ImageView
+                android:id="@+id/image_search"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:background="@drawable/circle_imagebackground"
+                android:scaleType="centerInside"
+                android:src="@drawable/circle_rigth" />
+
+            <ImageView
+                android:id="@+id/image_return"
+                android:layout_width="@dimen/dp_30"
+                android:layout_height="@dimen/dp_30"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:scaleType="centerInside"
+                android:src="@drawable/return_left" />
+        </RelativeLayout>
+
+
+        <LinearLayout
+            android:id="@+id/linearout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/body"
+            android:layout_margin="@dimen/dp_5"
+            android:gravity="center_vertical"
+            android:orientation="vertical" >
+            <TextView
+                android:id="@+id/text_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_5"
+                android:textSize="@dimen/sp_18"
+                android:paddingLeft="@dimen/dp_10"
+                android:hint="姓名" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#CDB79E" />
+            <EditText
+                android:id="@+id/et_group"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="请输入分组名称"
+                android:layout_below="@id/edit_search"
+                android:background="@null"
+                android:textSize="@dimen/sp_18"
+                android:paddingLeft="@dimen/dp_10"
+                />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_2"
+                android:background="@color/login_view"/>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/button_add"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_alignLeft="@+id/linearout"
+            android:layout_alignRight="@+id/linearout"
+            android:layout_below="@+id/linearout"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/signbuttonback"
+            android:gravity="center"
+            android:text="添加"
+            android:textSize="18sp" />
+    </RelativeLayout>
+</android.support.constraint.ConstraintLayout>

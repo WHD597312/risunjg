@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/configbgd"
+    android:padding="15dip"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/text_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/image_info"
+        android:layout_alignTop="@+id/image_info"
+        android:layout_toRightOf="@+id/image_info"
+        android:paddingLeft="15dip"
+        android:singleLine="true"
+        android:text="个人信息"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@android:color/black"
+        android:textSize="20dip"/>
+
+    <ImageView
+        android:id="@+id/image_info"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:scaleType="centerCrop"
+        android:src="@drawable/input_icon02" />
+    
+</RelativeLayout>
