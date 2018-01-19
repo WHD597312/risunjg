@@ -11,7 +11,7 @@ import org.greenrobot.greendao.annotation.Generated;
 
 @Entity
 public class Student {
-    @Id
+    @Id(autoincrement = true)
     private Long id;
     private String name;
     private int age;
@@ -19,15 +19,15 @@ public class Student {
     public Student(){
 
     }
-    public Student(String name,int age){
-        this.name=name;
-        this.age=age;
+
+
+    @Generated(hash = 352757281)
+    public Student(Long id, String name, int age) {
+        this.id = id;
+        this.name = name;
+        this.age = age;
     }
-    public Student(Long id,String name,int age){
-        this.id=id;
-        this.name=name;
-        this.age=age;
-    }
+   
 
     public void setId(Long id) {
         this.id = id;
@@ -55,13 +55,5 @@ public class Student {
 
 
 
-    @Keep
-    @Override
-    public String toString() {
-        return "Student{" +
-                "id="+id+
-                ",name="+name+
-                ",age="+age+
-                "}";
-    }
+
 }
