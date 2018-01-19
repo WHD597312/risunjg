@@ -40,5 +40,11 @@
             android:layout_height="wrap_content"
             android:text="查询全部"
             />
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="@dimen/dp_120"
+            android:layout_height="@dimen/dp_120"
+            android:layout_gravity="center"
+            />
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>
