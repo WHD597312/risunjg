@@ -3,9 +3,8 @@ package com.risun.jg.database;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 
+import com.risun.dao.DaoMaster;
 
-import com.yintong.secure.simple.encryptiongreendao.greendao.DaoMaster;
-import com.yintong.secure.simple.encryptiongreendao.greendao.DaoSession;
 
 /**
  * Created by whd on 2018/1/18.
@@ -50,7 +49,7 @@ public class DBManager {
     /**
      * 获取可读数据库
      */
-    private SQLiteDatabase getReadableDatabase() {
+    public SQLiteDatabase getReadableDatabase() {
         if (openHelper == null) {
             openHelper = new DaoMaster.DevOpenHelper(context, dbName, null);
         }
@@ -60,16 +59,12 @@ public class DBManager {
     /**
      * 获取可写数据库
      */
-    private SQLiteDatabase getWritableDatabase() {
+    public SQLiteDatabase getWritableDatabase() {
         if (openHelper == null) {
             openHelper = new DaoMaster.DevOpenHelper(context, dbName, null);
         }
         SQLiteDatabase db = openHelper.getWritableDatabase();
         return db;
     }
-
-
-
-
 
 }
