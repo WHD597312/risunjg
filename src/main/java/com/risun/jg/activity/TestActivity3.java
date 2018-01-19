@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.risun.jg.R;
-import com.risun.jg.database.dao.StudentDaoOpe;
+import com.risun.jg.database.dao.impl.StudentDaoOpt;
 import com.risun.jg.pojo.Student;
 
 import org.greenrobot.eventbus.EventBus;
@@ -29,10 +29,11 @@ public class TestActivity3 extends AppCompatActivity {
     @BindView(R.id.update) Button update;
     @BindView(R.id.check) Button check;
     @BindView(R.id.queryAll) Button queryAll;
+
+    private StudentDaoOpt studentDaoOpt;
     private String TAG="TestActivity3";
     private Context context;
-    private List<Student> studentList=new ArrayList<Student>();
-    private Student student;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,19 +47,20 @@ public class TestActivity3 extends AppCompatActivity {
         super.onStart();
         EventBus.getDefault().register(this);
         initData();
+        studentDaoOpt=new StudentDaoOpt(this);
     }
     private void initData(){
-        for(int i=0;i<100;i++){
-            student=new Student((long)i,"huang"+i,25);
-            studentList.add(student);
-        }
+
     }
 
     @OnClick({R.id.add,R.id.delete,R.id.update,R.id.check,R.id.queryAll})
     public void OnClick(View view){
         switch (view.getId()){
             case R.id.add:
-                StudentDaoOpe.insertData(context,studentList);
+                Student student=new Student();
+                student.setName("王海东");
+                student.setAge(24);
+                studentDaoOpt.insert(student);
                 break;
             case R.id.delete:
                 break;
@@ -67,7 +69,7 @@ public class TestActivity3 extends AppCompatActivity {
             case R.id.check:
                 break;
             case R.id.queryAll:
-                List<Student> list=StudentDaoOpe.queryAll(context);
+                List<Student> list=studentDaoOpt.queryAllStudent();
                 EventBus.getDefault().post(list);
                 break;
         }
@@ -75,8 +77,8 @@ public class TestActivity3 extends AppCompatActivity {
 
     @Subscribe(threadMode = ThreadMode.BACKGROUND)
     public void queryAllStudent(List<Student> students){
-        for(Student student:students){
-            Log.d(TAG,student.getName());
+        for (Student student:students){
+            Log.d(TAG,"id="+student.getId()+",name="+student.getName()+","+student.getAge());
         }
     }
     @Override
