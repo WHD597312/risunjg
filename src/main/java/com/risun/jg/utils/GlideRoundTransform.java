@@ -48,7 +48,6 @@ public class GlideRoundTransform extends BitmapTransformation {
         canvas.drawRoundRect(rectF, radius, radius, paint);
         return result;
     }
-
     @Override public String getId() {
         return getClass().getName() + Math.round(radius);
     }
